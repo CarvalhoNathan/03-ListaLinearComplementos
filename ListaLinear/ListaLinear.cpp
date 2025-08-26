@@ -84,7 +84,7 @@ void exibirElementos()
 {
 	if (nElementos == 0)
 	{
-		cout << " A lista esta vazia \n";
+		cout << "A lista esta vazia \n";
 	}
 	else {
 		cout << "Elementos: \n";
@@ -122,8 +122,28 @@ void inserirElemento()
 
 void excluirElemento()
 {
+	int valor;
+	
+	cout << "Digite o elemento para excluir: ";
+	cin >> valor;
 
+	int i = posicaoElemento(valor);
 
+	if (i != -1) {
+		lista[i] = 0;
+		nElementos--;
+
+		cout << "Elemento excluido \n";
+
+		for (int n = 0; n < nElementos; n++) {
+			lista[i] = lista[i + 1];
+			i++;
+		}
+
+	}
+	else {
+		cout << "Elemento nao existe \n";
+	}
 }
 
 void buscarElemento()
